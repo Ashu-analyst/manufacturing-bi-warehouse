@@ -1,0 +1,31 @@
+name: manufacturing_bi
+version: "1.0.0"
+config-version: 2
+profile: manufacturing_bi
+
+model-paths: ["models"]
+seed-paths: ["seeds"]
+test-paths: ["tests"]
+snapshot-paths: ["snapshots"]
+analysis-paths: ["analyses"]
+
+models:
+  manufacturing_bi:
+    staging:
+      +materialized: view
+      +schema: staging
+    marts:
+      core:
+        +materialized: table
+        +schema: core
+      reporting:
+        +materialized: table
+        +schema: reporting
+
+seeds:
+  manufacturing_bi:
+    +schema: raw
+    raw_sales_order_lines:
+      +column_types: {order_date: date, quantity: integer, unit_price: double}
+    raw_production_batches:
+      +column_types: {production_date: date}

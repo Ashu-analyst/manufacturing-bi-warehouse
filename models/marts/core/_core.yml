@@ -1,0 +1,41 @@
+version: 2
+models:
+  - name: dim_date
+    description: Daily calendar, conformed across all facts.
+    columns:
+      - name: date_key
+        tests: [unique, not_null]
+  - name: dim_customer
+    columns:
+      - name: customer_key
+        tests: [unique, not_null]
+  - name: dim_product
+    columns:
+      - name: product_key
+        tests: [unique, not_null]
+  - name: dim_site
+    columns:
+      - name: site_key
+        tests: [unique, not_null]
+  - name: fct_sales
+    description: Sales order lines (grain = one order line). Returns have negative quantity.
+    columns:
+      - name: order_line_id
+        tests: [unique, not_null]
+      - name: order_date_key
+        tests:
+          - relationships: {to: ref('dim_date'), field: date_key}
+      - name: customer_key
+        tests:
+          - relationships: {to: ref('dim_customer'), field: customer_key}
+      - name: product_key
+        tests:
+          - relationships: {to: ref('dim_product'), field: product_key}
+  - name: fct_production
+    description: Production batches (grain = one batch).
+    columns:
+      - name: batch_id
+        tests: [unique, not_null]
+      - name: production_date_key
+        tests:
+          - relationships: {to: ref('dim_date'), field: date_key}

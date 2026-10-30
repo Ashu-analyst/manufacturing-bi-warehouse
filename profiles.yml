@@ -1,0 +1,8 @@
+# Local: DuckDB file. Production: swap the target for Azure SQL / Synapse / Fabric (see docs/AZURE.md).
+manufacturing_bi:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: warehouse.duckdb
+      threads: 4

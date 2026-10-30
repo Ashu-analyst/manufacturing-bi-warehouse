@@ -1,0 +1,5 @@
+target/
+dbt_packages/
+logs/
+warehouse.duckdb*
+__pycache__/

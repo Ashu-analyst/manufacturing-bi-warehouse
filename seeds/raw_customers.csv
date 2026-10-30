@@ -1,0 +1,61 @@
+customer_no,customer_name,country,industry
+C001,HEALTH BV   ,NO,Nutraceutical
+C002,Bio BV ,NL,Pharma
+C003,BIO S.A.  ,IT,Pharma
+C004,Nutra S.A.,FR,Pharma
+C005,Nutra BV ,DE,Infant Nutrition
+C006,HEALTH S.A.  ,IT,Infant Nutrition
+C007,Pharma BV ,DE,Infant Nutrition
+C008,NUTRA GMBH  ,DE,Pharma
+C009,Pharma BV ,DE,Nutraceutical
+C010,Vital S.A.,IT,Pharma
+C011,BIO AG  ,FR,Nutraceutical
+C012,NUTRA GMBH  ,NO,Infant Nutrition
+C013,VITAL S.A.  ,CH,Pharma
+C014,VITAL INC  ,NL,Infant Nutrition
+C015,VITAL GMBH  ,de,Infant Nutrition
+C016,Nutra S.A.,de,Nutraceutical
+C017,Health GmbH,DE,Infant Nutrition
+C018,Nutra AG,NL,Pharma
+C019,Health S.A.,us,Nutraceutical
+C020,Nutra BV ,NL,Infant Nutrition
+C021,Vital Inc,de,Nutraceutical
+C022,Vital GmbH,us,Pharma
+C023,Pharma AG,de,Pharma
+C024,Nutra S.A.,NO,Pharma
+C025,Bio AG,NO,Infant Nutrition
+C026,PHARMA AG  ,us,Infant Nutrition
+C027,HEALTH GMBH  ,us,Nutraceutical
+C028,Pharma GmbH,FR,Infant Nutrition
+C029,VITAL GMBH  ,NL,Pharma
+C030,Health BV ,IT,Pharma
+C031,Nutra AG,NL,Nutraceutical
+C032,Vital GmbH,IT,Nutraceutical
+C033,Vital S.A.,de,Pharma
+C034,Nutra AG,IT,Infant Nutrition
+C035,PHARMA GMBH  ,IT,Nutraceutical
+C036,Vital BV ,NO,Pharma
+C037,Bio S.A.,IT,Pharma
+C038,Health AG,Germany,Nutraceutical
+C039,Pharma BV ,NL,Infant Nutrition
+C040,Pharma AG,CH,Pharma
+C041,Health S.A.,IT,Pharma
+C042,HEALTH GMBH  ,de,Pharma
+C043,Nutra BV ,FR,Pharma
+C044,HEALTH INC  ,us,Infant Nutrition
+C045,Health Inc,CH,Pharma
+C046,Nutra AG,NL,Nutraceutical
+C047,Bio BV ,IT,Pharma
+C048,VITAL AG  ,NL,Infant Nutrition
+C049,NUTRA GMBH  ,FR,Nutraceutical
+C050,HEALTH AG  ,DE,Pharma
+C051,Pharma Inc,US,Infant Nutrition
+C052,BIO AG  ,de,Nutraceutical
+C053,PHARMA S.A.  ,US,Infant Nutrition
+C054,Bio BV ,Germany,Infant Nutrition
+C055,Nutra GmbH,NO,Nutraceutical
+C056,VITAL GMBH  ,DE,Infant Nutrition
+C057,NUTRA S.A.  ,de,Infant Nutrition
+C058,Vital Inc,Germany,Pharma
+C059,Nutra S.A.,CH,Nutraceutical
+C060,NUTRA AG  ,US,Nutraceutical

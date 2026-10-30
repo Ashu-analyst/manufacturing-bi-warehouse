@@ -1,0 +1,28 @@
+name: dbt-ci
+on: [push, pull_request, workflow_dispatch]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      DBT_PROFILES_DIR: .
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip install -r requirements.txt
+      - name: dbt build (seeds + models + 32 data tests)
+        run: |
+          dbt build | tee build.txt
+          echo "## dbt build" >> $GITHUB_STEP_SUMMARY
+          echo '```' >> $GITHUB_STEP_SUMMARY; grep -E "Done\." build.txt | sed 's/\x1b\[[0-9;]*m//g' >> $GITHUB_STEP_SUMMARY; echo '```' >> $GITHUB_STEP_SUMMARY
+      - name: KPI output
+        run: |
+          python - <<'PY' >> $GITHUB_STEP_SUMMARY
+          import duckdb
+          df = duckdb.connect("warehouse.duckdb").sql("""
+            select site_name, year, round(sum(revenue_eur)/1e6,2) as revenue_m_eur,
+                   round(avg(reject_rate),3) as reject_rate, round(avg(yield),3) as yield
+            from main_reporting.rpt_monthly_site_kpis group by all order by 1,2""").df()
+          print("## KPIs by site and year\n"); print(df.to_markdown(index=False))
+          PY
+      - run: dbt docs generate
