@@ -2,6 +2,10 @@
 
 A Kimball-style **star-schema data warehouse** for a multi-site manufacturer, built with **dbt**. It turns raw ERP extracts into tested, documented fact and dimension tables and a KPI layer ready for Power BI. Data-quality checks run in CI and stop bad data from reaching dashboards.
 
+![dbt lineage: ERP extracts → staging → star schema → KPI layer](docs/img/lineage.png)
+
+![KPIs by site](docs/img/kpis.png)
+
 > The data is **synthetic** (`scripts/generate_erp_extracts.py`): 4 production sites in DE / NO / PE, 6 products (omega-3 / specialty oils), 60 B2B customers, ~2.9k order lines and ~1.7k production batches, Jan 2024 – Sep 2026. Real-world data problems are injected on purpose (see below).
 
 ## Why
